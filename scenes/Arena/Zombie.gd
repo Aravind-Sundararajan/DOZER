@@ -2,7 +2,7 @@ extends RigidBody
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var hp := 100.0
 var dying := false
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +16,9 @@ func _ready():
 
 # func _physics_process(delta):
 # 	pass
+
+func take_damage(amount: float):
+	hp = clamp(hp - amount, 0, 100)
 
 func die():
 	if !dying:

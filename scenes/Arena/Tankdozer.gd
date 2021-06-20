@@ -12,6 +12,14 @@ const SPEED: float = 20.0
 const STEER_SPEED: float = 1.5
 var look_sensitivity := 0.005
 
+enum GearShift {
+	FORWARD, REVERSE
+}
+
+var shift_position = GearShift.FORWARD
+
+var hp := 100.0
+
 var mouseDelta := Vector2.ZERO
 
 var velocity := Vector3.FORWARD
@@ -23,11 +31,20 @@ func _ready():
 func _input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		mouseDelta = event.position - viewport.size / 2
+	
+	# if event is InputEventMouseButton:
+		# shift_position = posmod(shift_position + 1, GearShift.size())
+
+func _process(_delta: float):
+	if Input.is_action_just_pressed("shift_gear"):
+		shift_position = posmod(shift_position + 1, GearShift.size())
 
 func _physics_process(delta: float):
 	rotation -= (Vector3(0, mouseDelta.x, 0) - transform.basis.y) * look_sensitivity * delta
 	var aim = get_global_transform().basis
-	var forward = SPEED * aim.z
+	
+	var speed = -SPEED if shift_position == GearShift.REVERSE else SPEED
+	var forward = speed * aim.z
 	var collision = move_and_collide(forward * delta)
 
 	if collision != null:
