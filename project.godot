@@ -8,15 +8,18 @@
 
 config_version=4
 
-_global_script_classes=[  ]
-_global_script_class_icons={
-
-}
-
 [application]
 
 config/name="BoundlessJam"
+run/main_scene="res://scenes/Arena/Arena.tscn"
 config/icon="res://icon.png"
+
+[input]
+
+Move={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [rendering]
 
