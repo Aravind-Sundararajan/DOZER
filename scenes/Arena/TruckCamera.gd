@@ -30,14 +30,14 @@ func _ready():
 
 # called when an input is detected
 func _input (event):
- 
+	pass
 	# did the mouse move?
-	if event is InputEventMouseMotion:
-		mouseDelta = event.position - viewport.size/2
+	#if event is InputEventMouseMotion:
+	#	mouseDelta = event.position - viewport.size/2
 		
 	#did you press the mb_left?
-	if event is InputEventMouseButton:
-		shakeStart()
+	#if event is InputEventMouseButton:
+	#	shakeStart()
 
 func shakeStart():
 	shakeAmount = rng.randf_range(shakeMin, shakeMax)
@@ -62,8 +62,8 @@ func _physics_process(delta):
 	
 	shake(t)
 	
-	var aim = player.get_global_transform().basis
-	panTo = panTo.linear_interpolate(aim.z,camSpeed)
-	camTo = camTo.linear_interpolate(player.transform.origin,camSpeed)
-	transform.origin = camTo + panTo * camera_dist  + camera_height
-	look_at_from_position(transform.origin,player.transform.origin,Vector3(0,1,0)) # + shakeAmount*Vector3(shakeX,shakeY,shakeZ)
+	#var aim = player.get_global_transform().basis
+	#panTo = panTo.linear_interpolate(aim.z,camSpeed)
+	#camTo = camTo.linear_interpolate(player.transform.origin,camSpeed)
+	#transform.origin = camTo + panTo * camera_dist  + camera_height
+	#look_at_from_position(transform.origin,player.transform.origin,Vector3(0,1,0)) # + shakeAmount*Vector3(shakeX,shakeY,shakeZ)

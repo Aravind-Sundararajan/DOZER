@@ -51,6 +51,7 @@ func _physics_process(delta: float):
 		print(collision.collider)
 		
 		if collision.collider.has_method("die"):
+			$Camera.shakeStart()
 			collision.collider.die()
 
 	# var mouse_position = get_viewport().get_mouse_position() - get_viewport().get_visible_rect().size / 2
