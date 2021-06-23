@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/smoke_particle.png-2af9cbaa4a935c239d404ea2402bff45.s3tc.stex"
-path.etc2="res://.import/smoke_particle.png-2af9cbaa4a935c239d404ea2402bff45.etc2.stex"
+path.s3tc="res://.import/circle_05.png-724ea9385d143d61ceda65186ad08092.s3tc.stex"
+path.etc2="res://.import/circle_05.png-724ea9385d143d61ceda65186ad08092.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://smoke_particle.png"
-dest_files=[ "res://.import/smoke_particle.png-2af9cbaa4a935c239d404ea2402bff45.s3tc.stex", "res://.import/smoke_particle.png-2af9cbaa4a935c239d404ea2402bff45.etc2.stex" ]
+source_file="res://sprites/circle_05.png"
+dest_files=[ "res://.import/circle_05.png-724ea9385d143d61ceda65186ad08092.s3tc.stex", "res://.import/circle_05.png-724ea9385d143d61ceda65186ad08092.etc2.stex" ]
 
 [params]
 

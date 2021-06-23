@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_vehicles_car_gear_transmission_stick_manual_movement_into_gear_engine_off_004_45974.mp3-eb3594d900c71be8383ed53bc9ac1ffc.mp3str"
+
+[deps]
+
+source_file="res://sounds/zapsplat_vehicles_car_gear_transmission_stick_manual_movement_into_gear_engine_off_004_45974.mp3"
+dest_files=[ "res://.import/zapsplat_vehicles_car_gear_transmission_stick_manual_movement_into_gear_engine_off_004_45974.mp3-eb3594d900c71be8383ed53bc9ac1ffc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

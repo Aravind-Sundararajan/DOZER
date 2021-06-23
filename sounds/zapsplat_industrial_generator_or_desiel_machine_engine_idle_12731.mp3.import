@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_industrial_generator_or_desiel_machine_engine_idle_12731.mp3-4bc3fee70b4e7e356d08d6aa284c1ae1.mp3str"
+
+[deps]
+
+source_file="res://sounds/zapsplat_industrial_generator_or_desiel_machine_engine_idle_12731.mp3"
+dest_files=[ "res://.import/zapsplat_industrial_generator_or_desiel_machine_engine_idle_12731.mp3-4bc3fee70b4e7e356d08d6aa284c1ae1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -8,6 +8,10 @@ extends KinematicBody
 onready var camera: Camera = $Camera
 onready var viewport := get_viewport()
 
+#SIGNALS
+signal steer_signal(direction)
+signal health_signal(health)
+
 const SPEED: float = 20.0
 const STEER_SPEED: float = 1.5
 var look_sensitivity := 0.005
@@ -26,7 +30,8 @@ var velocity := Vector3.FORWARD
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	emit_signal("steer_signal",shift_position) #technically these only need to be emitted on change, but whatever
+	emit_signal("health_signal",hp) 
 
 func _input(event: InputEvent):
 	if event is InputEventMouseMotion:
@@ -38,6 +43,8 @@ func _input(event: InputEvent):
 func _process(_delta: float):
 	if Input.is_action_just_pressed("shift_gear"):
 		shift_position = posmod(shift_position + 1, GearShift.size())
+		emit_signal("steer_signal",shift_position) #technically these only need to be emitted on change, but whatever
+		emit_signal("health_signal",hp) #move this to health change
 
 func _physics_process(delta: float):
 	rotation -= (Vector3(0, mouseDelta.x, 0) - transform.basis.y) * look_sensitivity * delta
