@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/troika.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/start.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Dozer"
+align = 1
+
+[node name="start" type="Button" parent="VBoxContainer"]
+margin_left = 272.0
+margin_top = 58.0
+margin_right = 367.0
+margin_bottom = 101.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.803922, 0, 1 )
+text = "start"
+script = ExtResource( 2 )
+
+[node name="options" type="Button" parent="VBoxContainer"]
+margin_left = 257.0
+margin_top = 105.0
+margin_right = 382.0
+margin_bottom = 148.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.803922, 0, 1 )
+text = "options"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+margin_left = 282.0
+margin_top = 152.0
+margin_right = 357.0
+margin_bottom = 195.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.803922, 0, 1 )
+text = "quit"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -28.0
+margin_right = 150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AC" type="Label" parent="MarginContainer"]
+margin_right = 150.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 3 )
+text = "Aruniecrisps"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -28.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AW" type="Label" parent="MarginContainer2"]
+margin_right = 150.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 3 )
+text = "AspectWaltz"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/start" to="VBoxContainer/start" method="_on_start_pressed"]
