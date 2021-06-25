@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://fonts/troika.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/start.gd" type="Script" id=2]
+[ext_resource path="res://scenes/quit.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -9,11 +10,47 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="CanvasItemMaterial" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
 [sub_resource type="DynamicFont" id=2]
 size = 32
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="CanvasItemMaterial" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="CanvasItemMaterial" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -29,14 +66,14 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 127.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 640.0
+margin_right = 127.0
 margin_bottom = 54.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
@@ -45,11 +82,17 @@ text = "Dozer"
 align = 1
 
 [node name="start" type="Button" parent="VBoxContainer"]
-margin_left = 272.0
+material = SubResource( 4 )
+margin_left = 22.0
 margin_top = 58.0
-margin_right = 367.0
-margin_bottom = 101.0
+margin_right = 105.0
+margin_bottom = 95.0
 size_flags_horizontal = 4
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 7 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
@@ -58,11 +101,17 @@ text = "start"
 script = ExtResource( 2 )
 
 [node name="options" type="Button" parent="VBoxContainer"]
-margin_left = 257.0
-margin_top = 105.0
-margin_right = 382.0
-margin_bottom = 148.0
+material = SubResource( 5 )
+margin_left = 7.0
+margin_top = 99.0
+margin_right = 120.0
+margin_bottom = 136.0
 size_flags_horizontal = 4
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
@@ -70,16 +119,23 @@ custom_colors/font_color_pressed = Color( 1, 0.803922, 0, 1 )
 text = "options"
 
 [node name="quit" type="Button" parent="VBoxContainer"]
-margin_left = 282.0
-margin_top = 152.0
-margin_right = 357.0
-margin_bottom = 195.0
+material = SubResource( 6 )
+margin_left = 32.0
+margin_top = 140.0
+margin_right = 95.0
+margin_bottom = 177.0
 size_flags_horizontal = 4
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/focus = SubResource( 20 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 9 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.803922, 0, 1 )
 text = "quit"
+script = ExtResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_top = 1.0
@@ -122,3 +178,4 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="VBoxContainer/start" to="VBoxContainer/start" method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="VBoxContainer/quit" method="_on_quit_pressed"]
