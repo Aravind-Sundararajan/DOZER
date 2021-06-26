@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Blastwave_FX_CarExplosionDebris_HV.132.mp3-5617e09765d6200ec96d33e03babe1a6.mp3str"
+
+[deps]
+
+source_file="res://sounds/Blastwave_FX_CarExplosionDebris_HV.132.mp3"
+dest_files=[ "res://.import/Blastwave_FX_CarExplosionDebris_HV.132.mp3-5617e09765d6200ec96d33e03babe1a6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

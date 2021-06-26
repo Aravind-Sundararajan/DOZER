@@ -1,7 +1,7 @@
 extends KinematicBody
 onready var player = get_node("res://scenes/Arena/Tankdozer.tscn")
 var splosion = preload("res://scenes/esplosion.tscn")
-
+var deathSound = preload("res://deathSound.tscn")
 var target = Vector3(0,0,0);
 var currentTarget = Vector3(0,0,0);
 var speed = 10
@@ -29,6 +29,6 @@ func _on_CSGBox_player_position(position):
 
 func die():
 	get_parent().add_child(splosion.instance())
-	#$DeathSoundEffect.play()
-	#hide()
+	var mySound = deathSound.instance()
+	get_parent().add_child(mySound)
 	queue_free()

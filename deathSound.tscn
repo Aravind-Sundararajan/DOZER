@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sounds/Blastwave_FX_CarExplosionDebris_HV.132.mp3" type="AudioStream" id=1]
+[ext_resource path="res://deathSound.gd" type="Script" id=2]
+
+[node name="deathSound" type="AudioStreamPlayer3D"]
+stream = ExtResource( 1 )
+unit_db = 10.0
+bus = "Sounds"
+script = ExtResource( 2 )
