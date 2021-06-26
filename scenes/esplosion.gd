@@ -1,8 +1,6 @@
-extends Button
+extends Spatial
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var passed_time : float = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,8 +9,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-func _on_quit_pressed():
-	get_tree().quit()
+func _process(delta):
+	passed_time += delta
+	if (passed_time > 10):
+		queue_free()

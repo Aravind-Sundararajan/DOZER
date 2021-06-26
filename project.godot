@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="BoundlessJam"
-run/main_scene="res://scenes/titlecard.tscn"
+config/name="Dozer"
+run/main_scene="res://scenes/sceneManager.tscn"
 config/icon="res://sprites/icon.png"
 
 [display]

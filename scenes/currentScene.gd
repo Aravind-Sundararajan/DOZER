@@ -1,4 +1,5 @@
-extends Button
+extends Node
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,5 +15,5 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_quit_pressed():
-	get_tree().quit()
+
+

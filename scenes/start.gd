@@ -1,5 +1,6 @@
 extends Button
 
+signal goToRoom(room)
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,4 +18,5 @@ func _ready():
 
 
 func _on_start_pressed():
-	get_tree().change_scene("res://scenes/Arena/Arena.tscn")
+	#get_tree().change_scene("res://scenes/Arena/Arena.tscn")
+	emit_signal("goToRoom","arena")

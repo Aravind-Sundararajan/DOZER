@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Arena/Tankdozer.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Arena/TruckCamera.gd" type="Script" id=2]
+[ext_resource path="res://models/actors/killdozer_mtl.material" type="Material" id=3]
+[ext_resource path="res://models/actors/killdozer.mesh" type="ArrayMesh" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 1.51629
@@ -19,4 +21,7 @@ script = ExtResource( 2 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
-[node name="CSGBox" type="CSGBox" parent="."]
+[node name="CSGBox" type="CSGMesh" parent="."]
+transform = Transform( -0.3, -4.52987e-08, 1.98007e-15, 0, -1.31134e-08, -0.3, 4.52987e-08, -0.3, 1.31134e-08, 0, 0, 0 )
+mesh = ExtResource( 4 )
+material = ExtResource( 3 )

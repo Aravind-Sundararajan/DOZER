@@ -5,7 +5,7 @@ var lookSensitivity : float = 0.05
 var minLookAngle : float = -5.0
 var maxLookAngle : float = 0.0
 var camera_dist = 10*Vector3(1,1,1)
-var camera_height = Vector3(0,30,0)
+var camera_height = Vector3(0,10,0)
 var camTo = Vector3(0,0,0)
 var panTo = Vector3(0,0,0)
 var camSpeed : float = 0.02
@@ -62,8 +62,8 @@ func _physics_process(delta):
 	
 	shake(t)
 	
-#	var aim = player.get_global_transform().basis
-#	panTo = panTo.linear_interpolate(aim.z,camSpeed)
-#	camTo = camTo.linear_interpolate(player.transform.origin,camSpeed)
-#	transform.origin = camTo + panTo * camera_dist  + camera_height
-#	look_at_from_position(transform.origin + shakeAmount*Vector3(shakeX,shakeY,shakeZ),player.transform.origin,Vector3(0,1,0))
+	var aim = player.get_global_transform().basis
+	panTo = panTo.linear_interpolate(aim.z,camSpeed)
+	camTo = camTo.linear_interpolate(player.transform.origin,camSpeed)
+	transform.origin = camTo + panTo * camera_dist  + camera_height
+	look_at_from_position(transform.origin + shakeAmount*Vector3(shakeX,shakeY,shakeZ),player.transform.origin,Vector3(0,1,0))

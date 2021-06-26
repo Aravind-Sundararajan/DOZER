@@ -1,4 +1,5 @@
-extends Button
+extends Spatial
+signal goToRoom(room)
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,5 +15,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_quit_pressed():
-	get_tree().quit()
+
+func _on_restart_goToRoom(room):
+	emit_signal("goToRoom",room)

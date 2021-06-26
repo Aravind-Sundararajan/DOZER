@@ -1,5 +1,6 @@
 extends Button
 
+signal goToRoom(room)
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -14,5 +15,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_quit_pressed():
-	get_tree().quit()
+
+func _on_restart_pressed():
+	#get_tree().change_scene("res://scenes/Arena/Arena.tscn")
+	emit_signal("goToRoom","arena")
