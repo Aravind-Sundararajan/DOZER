@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Arena/Tankdozer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/asphalt.png" type="Texture" id=2]
 [ext_resource path="res://blockSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Arena/Arena.gd" type="Script" id=4]
-[ext_resource path="res://tank.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tankSpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Control.tscn" type="PackedScene" id=6]
+[ext_resource path="res://tank.tscn" type="PackedScene" id=7]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 10, 10, 10 )
 
@@ -26,7 +27,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64815, 0 )
 width = 450.0
 height = 0.001
 depth = 450.0
-material = SubResource( 4 )
+material = SubResource( 1 )
 
 [node name="RigidBody" type="StaticBody" parent="floor"]
 
@@ -62,12 +63,16 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -227, 0
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody4"]
 shape = SubResource( 3 )
 
-[node name="tank" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29007, 0, 39.7688 )
+[node name="tankSpawner" parent="." instance=ExtResource( 5 )]
+
+[node name="tank" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40 )
 
 [connection signal="enemy_died" from="CSGBox" to="Control" method="_on_CSGBox_enemy_died"]
+[connection signal="enemy_died" from="CSGBox" to="tankSpawner" method="_on_CSGBox_enemy_died"]
 [connection signal="goToRoom" from="CSGBox" to="." method="_on_CSGBox_goToRoom"]
 [connection signal="health_signal" from="CSGBox" to="Control" method="_on_CSGBox_health_signal"]
 [connection signal="player_position" from="CSGBox" to="tank" method="_on_CSGBox_player_position"]
+[connection signal="player_position" from="CSGBox" to="tankSpawner" method="_on_CSGBox_player_position"]
 [connection signal="steer_signal" from="CSGBox" to="Control" method="_on_CSGBox_steer_signal"]
 [connection signal="goToRoom" from="Control" to="." method="_on_Control_goToRoom"]

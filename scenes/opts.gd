@@ -1,6 +1,7 @@
 extends Button
 
 signal goToRoom(room)
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -16,6 +17,5 @@ func _ready():
 #	pass
 
 
-func _on_restart_pressed():
-	#get_tree().change_scene("res://scenes/Arena/Arena.tscn")
-	emit_signal("goToRoom","titlecard")
+func _on_options_pressed():
+	emit_signal("goToRoom","options")

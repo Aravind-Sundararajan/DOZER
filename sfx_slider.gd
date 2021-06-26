@@ -1,6 +1,6 @@
-extends Button
+extends VSlider
+var sounds_bus = AudioServer.get_bus_index("Sounds")
 
-signal goToRoom(room)
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,7 +8,7 @@ signal goToRoom(room)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	value = AudioServer.get_bus_volume_db(sounds_bus)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,6 +16,6 @@ func _ready():
 #	pass
 
 
-func _on_restart_pressed():
-	#get_tree().change_scene("res://scenes/Arena/Arena.tscn")
-	emit_signal("goToRoom","titlecard")
+func _on_sfx_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(sounds_bus, value)
+	$demoSound.play()

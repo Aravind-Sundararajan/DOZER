@@ -13,3 +13,7 @@ func _ready():
 
 func _on_start_goToRoom(room):
 	emit_signal("goToRoom",room)
+
+
+func _on_options_goToRoom(room):
+	emit_signal("goToRoom",room)

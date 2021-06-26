@@ -26,3 +26,4 @@ script = ExtResource( 1 )
 [node name="DeathSoundEffect" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 3 )
 unit_db = 10.0
+bus = "Sounds"

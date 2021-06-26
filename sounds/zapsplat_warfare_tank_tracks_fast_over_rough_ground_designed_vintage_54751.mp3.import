@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_warfare_tank_tracks_fast_over_rough_ground_designed_vintage_54751.mp3-b643714c8ddb43645eb708ad7866d237.mp3str"
+
+[deps]
+
+source_file="res://sounds/zapsplat_warfare_tank_tracks_fast_over_rough_ground_designed_vintage_54751.mp3"
+dest_files=[ "res://.import/zapsplat_warfare_tank_tracks_fast_over_rough_ground_designed_vintage_54751.mp3-b643714c8ddb43645eb708ad7866d237.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
