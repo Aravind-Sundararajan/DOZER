@@ -8,12 +8,12 @@ func _ready():
 
 func _on_CSGBox_enemy_died():
 	count += 1
-	var randx = rand_range(-100,100)
-	var randy = rand_range(-100,100)
+	var randx = rand_range(-50,50)
+	var randz = rand_range(-50,50)
 	if (count % 2 == 0):
 		var tankInstance = tank.instance()
 		self.add_child(tankInstance)
-		tankInstance.transform.origin = transform.origin + Vector3(0,0, 0)
+		tankInstance.transform.origin = transform.origin + Vector3(randx, 0, randz)
 		self.connect("player_position",tankInstance,"receive_player_position")
 
 

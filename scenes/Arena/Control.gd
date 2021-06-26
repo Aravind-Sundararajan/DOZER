@@ -17,6 +17,5 @@ func _on_CSGBox_enemy_died():
 func _ready():
 	$AudioEngine.play()
 
-
 func _on_count_goToRoom(room):
 	emit_signal("goToRoom",room)

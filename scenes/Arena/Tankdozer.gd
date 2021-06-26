@@ -21,7 +21,7 @@ enum GearShift {
 
 var shift_position = GearShift.FORWARD
 
-var hp := 50.0
+var hp := 100.0
 
 var mouseDelta := Vector2.ZERO
 

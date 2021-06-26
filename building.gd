@@ -9,5 +9,4 @@ func die():
 	get_parent().add_child(splosion.instance())
 	get_parent().get_node("DeathSoundEffect").play()
 	hide()
-	#yield($DeathSoundEffect, "finished")
 	queue_free()

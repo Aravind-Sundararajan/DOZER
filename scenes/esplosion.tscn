@@ -56,7 +56,7 @@ gradient = SubResource( 5 )
 
 [sub_resource type="ParticlesMaterial" id=7]
 emission_shape = 1
-emission_sphere_radius = 6.0
+emission_sphere_radius = 3.0
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
 angular_velocity = 30.0
@@ -64,7 +64,7 @@ angular_velocity_random = 1.0
 linear_accel = 18.11
 angle = 360.0
 angle_random = 1.0
-scale = 20.34
+scale = 5.0
 scale_random = 1.0
 color_ramp = SubResource( 6 )
 
@@ -76,6 +76,7 @@ params_billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
+albedo_color = Color( 1, 1, 1, 0.109804 )
 albedo_texture = ExtResource( 3 )
 
 [sub_resource type="Gradient" id=9]
@@ -90,7 +91,7 @@ _data = [ Vector2( 0.0133929, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.126623, 1 ), 0.0, 
 [sub_resource type="CurveTexture" id=12]
 curve = SubResource( 11 )
 
-[sub_resource type="ParticlesMaterial" id=13]
+[sub_resource type="ParticlesMaterial" id=16]
 emission_shape = 1
 emission_sphere_radius = 3.0
 spread = 180.0
@@ -100,11 +101,11 @@ angular_velocity_random = 1.0
 linear_accel = 4.0
 angle = 360.0
 angle_random = 1.0
-scale = 10.0
+scale = 5.0
 scale_curve = SubResource( 12 )
 color_ramp = SubResource( 10 )
 
-[sub_resource type="QuadMesh" id=14]
+[sub_resource type="QuadMesh" id=17]
 
 [sub_resource type="ParticlesMaterial" id=15]
 flag_rotate_y = true
@@ -117,7 +118,7 @@ angular_velocity_random = 1.0
 scale = 2.0
 
 [node name="esplosion" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.37231, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.208989, 0 )
 script = ExtResource( 6 )
 
 [node name="sparks" type="Spatial" parent="."]
@@ -149,8 +150,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15625, 0 )
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0 )
 material_override = SubResource( 8 )
 amount = 32
-process_material = SubResource( 13 )
-draw_pass_1 = SubResource( 14 )
+process_material = SubResource( 16 )
+draw_pass_1 = SubResource( 17 )
 
 [node name="fragments" type="Spatial" parent="."]
 

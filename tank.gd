@@ -4,7 +4,7 @@ var splosion = preload("res://scenes/esplosion.tscn")
 var deathSound = preload("res://deathSound.tscn")
 var target = Vector3(0,0,0);
 var currentTarget = Vector3(0,0,0);
-var speed = 10
+var speed = 19
 var damage = 10.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,7 +28,10 @@ func _on_CSGBox_player_position(position):
 	target = position
 
 func die():
-	get_parent().add_child(splosion.instance())
+	var explosion = splosion.instance()
+	get_parent().add_child(explosion)
+	explosion.transform.origin = transform.origin
+	
 	var mySound = deathSound.instance()
 	get_parent().add_child(mySound)
 	queue_free()

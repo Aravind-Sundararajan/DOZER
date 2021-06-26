@@ -15,5 +15,5 @@ func _ready():
 func _on_Control_enemy_died():
 	count += 1
 	text = str(count)
-	if (count > 10):
+	if (count > 200):
 		emit_signal("goToRoom","victory")

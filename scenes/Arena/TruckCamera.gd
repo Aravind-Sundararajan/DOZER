@@ -4,7 +4,7 @@ var mouseDelta : Vector2 = Vector2()
 var lookSensitivity : float = 0.05
 var minLookAngle : float = -5.0
 var maxLookAngle : float = 0.0
-var camera_dist = 10*Vector3(1,1,1)
+var camera_dist = -10*Vector3(1,1,1)
 var camera_height = Vector3(0,10,0)
 var camTo = Vector3(0,0,0)
 var panTo = Vector3(0,0,0)
@@ -20,9 +20,9 @@ var shakeZ : float = 0.0
 #shake params
 var shakeAmount : float = 0.0
 var shakeSpeed : float = 3000.0
-var shakeDecay : float = 0.1
-var shakeMin : float = 0.6
-var shakeMax : float = 0.7
+var shakeDecay : float = 0.5
+var shakeMin : float = 0.3
+var shakeMax : float = 0.2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -80,7 +80,7 @@ draw_pass_1 = SubResource( 3 )
 [node name="smoke" type="Spatial" parent="."]
 
 [node name="Particles" type="Particles" parent="smoke"]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, -5.68648, 0 )
 material_override = SubResource( 4 )
 amount = 32
 lifetime = 3.0

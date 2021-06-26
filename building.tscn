@@ -2,7 +2,7 @@
 
 [ext_resource path="res://buildingMesh.gd" type="Script" id=1]
 [ext_resource path="res://building.gd" type="Script" id=2]
-[ext_resource path="res://sounds/zapsplat_nature_rocks_landslide_boulders_heavy_low_frequency_rumble_sustained_48239.mp3" type="AudioStream" id=3]
+[ext_resource path="res://sounds/Blastwave_FX_CarExplosionDebris_HV.132.mp3" type="AudioStream" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 5, 5, 5 )
@@ -10,6 +10,7 @@ extents = Vector3( 5, 5, 5 )
 [node name="building" type="Spatial"]
 
 [node name="StaticBody" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
 mode = 1
 mass = 6687.24
 contacts_reported = 1

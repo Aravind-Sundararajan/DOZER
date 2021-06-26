@@ -12,7 +12,8 @@ config_version=4
 
 config/name="Dozer"
 run/main_scene="res://scenes/sceneManager.tscn"
-config/icon="res://sprites/icon.png"
+boot_splash/image="res://sprites/banner.png"
+config/icon="res://sprites/banner.png"
 
 [display]
 
