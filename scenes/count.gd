@@ -6,8 +6,6 @@ signal goToRoom(room)
 func _ready():
 	text = str(count)
 
-
-
 func _on_Control_enemy_died():
 	count += 1
 	text = str(count)

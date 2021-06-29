@@ -12,11 +12,6 @@ func _ready():
 	$currentScene.get_child(0).connect("goToRoom",self,"on_goToRoom")
 	$transition.get_node("AnimationPlayer").play("fade_to_normal")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	if Input.is_action_just_pressed("ui_accept"):
-#		$transition.transition()
-
 func _on_transition_transitioned():
 	$currentScene.get_child(0).queue_free()
 	var newRoom = goToRoom.instance()

@@ -23,6 +23,3 @@ func _ready():
 	var myMeshIndex = rng.randi_range(0,4)
 	set_mesh(load(meshPaths[myMeshIndex]))
 	set_material(load(matPaths[myMeshIndex]))
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

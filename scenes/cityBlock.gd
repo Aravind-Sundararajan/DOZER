@@ -8,7 +8,3 @@ func _ready():
 			var buildingInstance = building.instance()
 			self.add_child(buildingInstance)
 			buildingInstance.transform.origin = transform.origin + Vector3(i*12,0, j* 12)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

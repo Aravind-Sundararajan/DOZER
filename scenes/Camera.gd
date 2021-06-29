@@ -6,7 +6,6 @@ onready var dozer = get_parent()
 func _ready():
 	pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time_passed += delta
