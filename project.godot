@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "Building",
+"language": "GDScript",
+"path": "res://scenes/building.gd"
+}, {
+"base": "KinematicBody",
+"class": "Tank",
+"language": "GDScript",
+"path": "res://scenes/tank.gd"
+} ]
+_global_script_class_icons={
+"Building": "",
+"Tank": ""
+}
+
 [application]
 
 config/name="Dozer"
@@ -38,5 +54,6 @@ shift_gear={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

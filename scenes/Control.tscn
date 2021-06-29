@@ -6,9 +6,9 @@
 [ext_resource path="res://scenes/Arena/guage.gd" type="Script" id=4]
 [ext_resource path="res://fonts/troika.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://sprites/UI/lifebar_fill.png" type="Texture" id=6]
-[ext_resource path="res://sounds/zapsplat_industrial_generator_or_desiel_machine_engine_idle_12731.mp3" type="AudioStream" id=7]
+[ext_resource path="res://sounds/tread.wav" type="AudioStream" id=7]
 [ext_resource path="res://sprites/UI/slider_grabber.png" type="Texture" id=8]
-[ext_resource path="res://sounds/zapsplat_vehicles_car_gear_transmission_stick_manual_movement_into_gear_engine_off_004_45974.mp3" type="AudioStream" id=9]
+[ext_resource path="res://sounds/gear.wav" type="AudioStream" id=9]
 [ext_resource path="res://sprites/UI/lifebar_bg.png" type="Texture" id=10]
 [ext_resource path="res://sprites/UI/slider_area.png" type="Texture" id=11]
 [ext_resource path="res://scenes/count.gd" type="Script" id=12]
@@ -173,12 +173,12 @@ __meta__ = {
 
 [node name="AudioEngine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -10.0
-pitch_scale = 0.77
+volume_db = -20.0
+pitch_scale = 1.5
 bus = "Sounds"
 
-[connection signal="enemy_died" from="." to="HBoxContainer/bars/bar/count" method="_on_Control_enemy_died"]
 [connection signal="enemy_died" from="." to="HBoxContainer/bars/bar/coolness" method="_on_Control_enemy_died"]
+[connection signal="enemy_died" from="." to="HBoxContainer/bars/bar/count" method="_on_Control_enemy_died"]
 [connection signal="health_change" from="." to="HBoxContainer/bars/bar/MarginContainer/guage" method="_on_Control_health_change"]
 [connection signal="steer_change" from="." to="HBoxContainer2/gear_shift" method="_on_Control_steer_change"]
 [connection signal="goToRoom" from="HBoxContainer/bars/bar/count" to="." method="_on_count_goToRoom"]

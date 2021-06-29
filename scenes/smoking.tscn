@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/circle_05.png" type="Texture" id=1]
 [ext_resource path="res://sprites/smoke_particle.png" type="Texture" id=2]
@@ -14,7 +14,34 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="QuadMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 8.43846e-07, 0.49919 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0 )
+
+[node name="smoke" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.37231, 0 )
+
+[node name="sparks" type="Spatial" parent="."]
+
+[node name="Particles" type="CPUParticles" parent="sparks"]
+transform = Transform( -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0, -7.18942, 0 )
+material_override = SubResource( 1 )
+amount = 10
+lifetime = 0.54
+mesh = SubResource( 2 )
 emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 180.0
@@ -26,63 +53,28 @@ linear_accel = 50.0
 linear_accel_random = 1.0
 angle = 360.0
 angle_random = 1.0
-scale = 0.5
-scale_random = 0.27
+scale_amount = 0.5
+scale_amount_random = 0.27
 color = Color( 0.941176, 1, 0, 1 )
 
-[sub_resource type="QuadMesh" id=3]
+[node name="smoke" type="Spatial" parent="."]
 
-[sub_resource type="SpatialMaterial" id=4]
-flags_transparent = true
-flags_unshaded = true
-vertex_color_use_as_albedo = true
-params_blend_mode = 1
-params_billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-albedo_texture = ExtResource( 2 )
-
-[sub_resource type="Gradient" id=5]
-offsets = PoolRealArray( 0, 8.43846e-07, 0.49919 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
-
-[sub_resource type="ParticlesMaterial" id=7]
+[node name="Particles" type="CPUParticles" parent="smoke"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -5.68648, 0 )
+material_override = SubResource( 3 )
+amount = 16
+lifetime = 3.0
+mesh = SubResource( 2 )
 emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
+initial_velocity = 13.51
 angular_velocity = 30.0
 angular_velocity_random = 1.0
 linear_accel = 18.11
 angle = 360.0
 angle_random = 1.0
-scale = 5.0
-scale_random = 1.0
-color_ramp = SubResource( 6 )
-
-[node name="smoke" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.37231, 0 )
-
-[node name="sparks" type="Spatial" parent="."]
-
-[node name="Particles" type="Particles" parent="sparks"]
-transform = Transform( -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0, -7.18942, 0 )
-material_override = SubResource( 1 )
-amount = 20
-lifetime = 0.54
-process_material = SubResource( 2 )
-draw_pass_1 = SubResource( 3 )
-
-[node name="smoke" type="Spatial" parent="."]
-
-[node name="Particles" type="Particles" parent="smoke"]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, -5.68648, 0 )
-material_override = SubResource( 4 )
-amount = 32
-lifetime = 3.0
-process_material = SubResource( 7 )
-draw_pass_1 = SubResource( 3 )
+scale_amount = 5.0
+scale_amount_random = 1.0
+color_ramp = SubResource( 4 )

@@ -2,9 +2,9 @@ extends Node
 var rooms = {
 	"titlecard" : preload("res://scenes/titlecard.tscn"),
 	"arena" : preload("res://scenes/Arena/Arena.tscn"),
-	"options" : preload("res://options.tscn"),
-	"gameover" : preload("res://gameover.tscn"),
-	"victory" : preload("res://victory.tscn")
+	"options" : preload("res://scenes/options.tscn"),
+	"gameover" : preload("res://scenes/gameover.tscn"),
+	"victory" : preload("res://scenes/victory.tscn")
 }
 var goToRoom = rooms["titlecard"]
 # Called when the node enters the scene tree for the first time.
